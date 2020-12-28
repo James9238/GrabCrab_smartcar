@@ -5,10 +5,10 @@ void pinmodeSetup(){
   pinMode(enRF, OUTPUT);
   pinMode(enRB, OUTPUT);
   /*H-Bridge direction control pins*/
-  pinMode(inLF_1, OUTPUT); pinMode(inLF_2, OUTPUT); /*Left front engine*/
-  pinMode(inLB_1, OUTPUT); pinMode(inLB_2, OUTPUT); /*Left back engine*/
-  pinMode(inRF_1, OUTPUT); pinMode(inRF_2, OUTPUT); /*Right front engine*/
-  pinMode(inRB_1, OUTPUT); pinMode(inRB_2, OUTPUT); /*Right back engine*/
+  pinMode(inLF_1, OUTPUT); pinMode(inLF_2, OUTPUT); /*Left front motor*/
+  pinMode(inLB_1, OUTPUT); pinMode(inLB_2, OUTPUT); /*Left back motor*/
+  pinMode(inRF_1, OUTPUT); pinMode(inRF_2, OUTPUT); /*Right front motor*/
+  pinMode(inRB_1, OUTPUT); pinMode(inRB_2, OUTPUT); /*Right back motor*/
   /*Control inputs*/
   pinMode(xAxisPin, INPUT);
   pinMode(yAxisPin, INPUT);

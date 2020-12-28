@@ -61,7 +61,7 @@ void STOP_RB(){
 
 void yAxisControl(int y){
   if(y > 550){
-    /*Set all engines forward*/
+    /*Set all motors forward*/
     forward_LF(); forward_LB(); forward_RF(); forward_RB();
     motorSpeedLF = map(y, 550, 1023, 0, 255);
     motorSpeedLB = map(y, 550, 1023, 0, 255);
@@ -69,7 +69,7 @@ void yAxisControl(int y){
     motorSpeedRB = map(y, 550, 1023, 0, 255);
   }
   else if(y < 470){
-    /*Set all engines in reverse*/
+    /*Set all motors in reverse*/
     reverse_LF(); reverse_LB(); reverse_RF(); reverse_RB();
     motorSpeedLF = map(y, 470, 0, 0, 255);
     motorSpeedLB = map(y, 470, 0, 0, 255);
@@ -85,7 +85,7 @@ void xAxisControl(int x){
     motorSpeedLB = motorSpeedLB - xMapped;
     motorSpeedRF = motorSpeedRF + xMapped;
     motorSpeedRB = motorSpeedRB + xMapped;
-    /*Limit range to 0-255 for all engines*/
+    /*Limit range to 0-255 for all motors*/
     if(motorSpeedLF < 0){motorSpeedLF = 0;} if(motorSpeedLF > 255){}{motorSpeedLF = 255;}
     if(motorSpeedLB < 0){motorSpeedLB = 0;} if(motorSpeedLB > 255){}{motorSpeedLB = 255;}
     if(motorSpeedRF < 0){motorSpeedRF = 0;} if(motorSpeedRF > 255){}{motorSpeedRF = 255;}
@@ -98,7 +98,7 @@ void xAxisControl(int x){
     motorSpeedLB = motorSpeedLB + xMapped;
     motorSpeedRF = motorSpeedRF - xMapped;
     motorSpeedRB = motorSpeedRB - xMapped;
-    /*Limit range to 0-255 for all engines*/
+    /*Limit range to 0-255 for all motors*/
     if(motorSpeedLF < 0){motorSpeedLF = 0;} if(motorSpeedLF > 255){}{motorSpeedLF = 255;}
     if(motorSpeedLB < 0){motorSpeedLB = 0;} if(motorSpeedLB > 255){}{motorSpeedLB = 255;}
     if(motorSpeedRF < 0){motorSpeedRF = 0;} if(motorSpeedRF > 255){}{motorSpeedRF = 255;}

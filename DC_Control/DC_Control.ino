@@ -1,4 +1,4 @@
-/*Joystick DC Control for crawler car*/
+/*Joystick DC Control for GrabCrab smartcar*/
 
 /*Nano PWM Pinout: 3, 5, 6, 9, 10, 11 // 490Hz(980Hz: pin 5, 6*/
 /*Mega PWM Pinout: 2-13, 44-46*/
@@ -28,7 +28,7 @@
 #define yAxisPin       A1
 #define potSWPin       A2
 
-/*Engine speed variables*/
+/*Motor speed variables*/
 int motorSpeedLF = 0;
 int motorSpeedLB = 0;
 int motorSpeedRF = 0;
