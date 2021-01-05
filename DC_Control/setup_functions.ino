@@ -13,6 +13,10 @@ void pinmodeSetup(){
   pinMode(xAxisPin, INPUT);
   pinMode(yAxisPin, INPUT);
   pinMode(potSWPin, INPUT);
+  pinMode(xAxisPin2, INPUT);
+  pinMode(yAxisPin2, INPUT);
+  pinMode(potSWPin2, INPUT);
+  pinMode(potPin, INPUT);
 }
 
 void directionSetup(){
