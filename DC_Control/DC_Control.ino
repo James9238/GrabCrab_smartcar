@@ -1,36 +1,21 @@
 // GrabCrab Smartcar project //
 
 /*
-Medlemmer: Henrik
-Audun, Linda (når de får ut fingern) :)
-
-Mål:
-Smart-kjøretøy med mangfoldig eller spesifikke muligheter. Fyll inn mer.
+Author: Henrik Bryne
+Mail: jegerbryne@gmail.com
+2020/2021 USN Cybernetics first year
 */
 
-// TODO //
-/*
-Logic for minimal inputs when using RPi for motor and servo control. 
-  Servo control: Serial comms? Degree or step input?
-  Motor control: Logic circuit? f.ex if ((forward OR reverse) AND strafe) -> slope to strafe direction. 
-                 Keyword serial control?
-                 Can we run motor control inputs on interrupt routines?
-Is it possible to run both motors and servo from the same nano?
-  Figure out pinout requirements with everything connected. 
-  Alternate control solutions if too few?
-*/
-
-
-// Define inputs, outputs and global variables:
+// Define inputs, outputs and global variables // 
 
 /*Nano PWM Pinout: 3, 5, 6, 9, 10, 11 // 490Hz(980Hz: pin 5, 6*/
 /*Mega PWM Pinout: 2-13, 44-46*/
 
 /*Define PWM pinout*/
-#define enLF 5 // Left Front
-#define enLB 10 // Left Back
-#define enRF 6 // Right Front
-#define enRB 11 // Right Back
+#define enLF 5    // Left Front
+#define enLB 10   // Left Back
+#define enRF 6    // Right Front
+#define enRB 11   // Right Back
 
 /*Define in-ports*/
 /*Left front: */
