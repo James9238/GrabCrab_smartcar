@@ -32,13 +32,6 @@ Mail: jegerbryne@gmail.com
 #define inRB_2  13
 
 /*Define control inputs*/
-// #define xAxisPin        A6
-// #define yAxisPin        A1
-// #define potSWPin        A2
-
-// #define xAxisPin2       A3
-// #define yAxisPin2       A4
-// #define potSWPin2       A5
 
 #define potPin          A0
 
@@ -47,7 +40,7 @@ Mail: jegerbryne@gmail.com
 #define in3             A3
 #define in4             A4
 
-/*Control variables*/
+/*Control input variables*/
 bool bit1 = 0;
 bool bit2 = 0;
 bool bit3 = 0;
