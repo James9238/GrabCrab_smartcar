@@ -33,11 +33,13 @@ Unused:
 */
 
 void readControlInput(){
-  bool bit1 = digitalRead(in1);
-  bool bit2 = digitalRead(in2);
-  bool bit3 = digitalRead(in3);
-  bool bit4 = digitalRead(in4);
+  bit1 = digitalRead(in1);
+  bit2 = digitalRead(in2);
+  bit3 = digitalRead(in3);
+  bit4 = digitalRead(in4);
+}
 
+void directionUpdate(){
   // 0010  |   forward
   if      (!bit4 && !bit3 && bit2 && !bit1){forward();}
   // 0011  |   reverse

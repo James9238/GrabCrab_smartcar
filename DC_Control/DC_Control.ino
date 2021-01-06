@@ -55,12 +55,20 @@ Is it possible to run both motors and servo from the same nano?
 // #define yAxisPin2       A4
 // #define potSWPin2       A5
 
+#define potPin          A0
+
 #define in1             A1
 #define in2             A2
 #define in3             A3
 #define in4             A4
 
-#define potPin          A0
+/*Control variables*/
+bool bit1 = 0;
+bool bit2 = 0;
+bool bit3 = 0;
+bool bit4 = 0;
+
+
 
 /*Motor speed variables*/
 int motorSpeedLF = 0;

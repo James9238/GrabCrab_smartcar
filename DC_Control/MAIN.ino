@@ -7,11 +7,11 @@ void setup() {
 
 void loop() {
   /*something goes here*/
-
+  readControlInput();
   int potVal = map(analogRead(potPin), 0, 1023, 0, 255);
 
   Serial.println(potVal);
-
+  directionUpdate();
   update_LF(potVal);
   update_RF(potVal);
   update_LB(potVal);

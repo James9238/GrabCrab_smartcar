@@ -49,7 +49,10 @@ void xAxisControl(int x){
     if(motorSpeedRF < 0){motorSpeedRF = 0;} if(motorSpeedRF > 255){}{motorSpeedRF = 255;}
     if(motorSpeedRB < 0){motorSpeedRB = 0;} if(motorSpeedRB > 255){}{motorSpeedRB = 255;}
   }
-  /*Possibly required lower limit. Set to 20 initially, adjust up if necessary*/
+  /*Possibly required lower limit. Set to 20 initially, adjust up if necessary.
+  Lower limit of 70 required.
+  
+  */
   if(motorSpeedLF < 20){motorSpeedLF = 0;}
   if(motorSpeedLB < 20){motorSpeedLB = 0;}
   if(motorSpeedRF < 20){motorSpeedRF = 0;}
@@ -57,16 +60,44 @@ void xAxisControl(int x){
 }
 
 void update_LF(int value){
-  analogWrite(enLF, value);
+  if(inLF_1 != inLF_2){
+    if(value < 70){
+      analogWrite(enLF, 0);
+    }
+    else{
+      analogWrite(enLF, value);
+    }
+  }
 }
 void update_LB(int value){
-  analogWrite(enLB, value);
+  if(inLB_1 != inLB_2){
+    if(value < 70){
+      analogWrite(enLB, 0);
+    }
+    else{
+      analogWrite(enLB, value);
+    }
+  }
 }
 void update_RF(int value){
-  analogWrite(enRF, value);
+  if(inRF_1 != inRF_2){
+    if(value < 70){
+      analogWrite(enRF, 0);
+    }
+    else{
+      analogWrite(enRF, value);
+    }
+  }
 }
 void update_RB(int value){
-  analogWrite(enRB, value);
+  if(inRB_1 != inRB_2){
+    if(value < 70){
+      analogWrite(enRB, 0);
+    }
+    else{
+      analogWrite(enRB, value);
+    }
+  }
 }
 
 void motorUpdate(){
