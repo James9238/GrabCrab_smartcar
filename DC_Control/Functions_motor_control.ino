@@ -4,61 +4,6 @@ void STOP_ISR(){
   digitalWrite(STOP_LED, HIGH);
 }
 
-/*Left front forward*/
-void forward_LF(){
-  digitalWrite(inLF_1, LOW); digitalWrite(inLF_2, HIGH);
-}
-/*Left front reverse*/
-void reverse_LF(){
-  digitalWrite(inLF_1, HIGH); digitalWrite(inLF_2, LOW);
-}
-/*Left front STOP*/
-void STOP_LF(){
-  digitalWrite(inLF_1, LOW); digitalWrite(inLF_2, LOW);
-}
-
-
-/*Left back forward*/
-void forward_LB(){
-  digitalWrite(inLB_1, LOW); digitalWrite(inLB_2, HIGH);
-}
-/*Left back reverse*/
-void reverse_LB(){
-  digitalWrite(inLB_1, HIGH); digitalWrite(inLB_2, LOW);
-}
-/*Left back STOP*/
-void STOP_LB(){
-  digitalWrite(inLB_1, LOW); digitalWrite(inLB_2, LOW);
-}
-
-
-/*Right front forward*/
-void forward_RF(){
-  digitalWrite(inRF_1, LOW); digitalWrite(inRF_2, HIGH);
-}
-/*Right front reverse*/
-void reverse_RF(){
-  digitalWrite(inRF_1, HIGH); digitalWrite(inRF_2, LOW);
-}
-/*Right front STOP*/
-void STOP_RF(){
-  digitalWrite(inRF_1, LOW); digitalWrite(inRF_2, HIGH);
-}
-
-
-/*Right back forward*/
-void forward_RB(){
-  digitalWrite(inRB_1, LOW); digitalWrite(inRB_2, HIGH);
-}
-/*Right back reverse*/
-void reverse_RB(){
-  digitalWrite(inRB_1, HIGH); digitalWrite(inRB_2, LOW);
-}
-/*Right back STOP*/
-void STOP_RB(){
-  digitalWrite(inRB_1, LOW); digitalWrite(inRB_2, HIGH);
-}
-
 void yAxisControl(int y){
   if(y > 550){
     /*Set all motors forward*/
@@ -126,4 +71,59 @@ void update_RB(int value){
 
 void motorUpdate(){
   update_LF(motorSpeedLF);  update_LB(motorSpeedLB);  update_RF(motorSpeedRF);  update_RB(motorSpeedRB);
+}
+
+/*Left front forward*/
+void forward_LF(){
+  digitalWrite(inLF_1, LOW); digitalWrite(inLF_2, HIGH);
+}
+/*Left front reverse*/
+void reverse_LF(){
+  digitalWrite(inLF_1, HIGH); digitalWrite(inLF_2, LOW);
+}
+/*Left front STOP*/
+void STOP_LF(){
+  digitalWrite(inLF_1, LOW); digitalWrite(inLF_2, LOW);
+}
+
+
+/*Left back forward*/
+void forward_LB(){
+  digitalWrite(inLB_1, LOW); digitalWrite(inLB_2, HIGH);
+}
+/*Left back reverse*/
+void reverse_LB(){
+  digitalWrite(inLB_1, HIGH); digitalWrite(inLB_2, LOW);
+}
+/*Left back STOP*/
+void STOP_LB(){
+  digitalWrite(inLB_1, LOW); digitalWrite(inLB_2, LOW);
+}
+
+
+/*Right front forward*/
+void forward_RF(){
+  digitalWrite(inRF_1, LOW); digitalWrite(inRF_2, HIGH);
+}
+/*Right front reverse*/
+void reverse_RF(){
+  digitalWrite(inRF_1, HIGH); digitalWrite(inRF_2, LOW);
+}
+/*Right front STOP*/
+void STOP_RF(){
+  digitalWrite(inRF_1, LOW); digitalWrite(inRF_2, HIGH);
+}
+
+
+/*Right back forward*/
+void forward_RB(){
+  digitalWrite(inRB_1, LOW); digitalWrite(inRB_2, HIGH);
+}
+/*Right back reverse*/
+void reverse_RB(){
+  digitalWrite(inRB_1, HIGH); digitalWrite(inRB_2, LOW);
+}
+/*Right back STOP*/
+void STOP_RB(){
+  digitalWrite(inRB_1, LOW); digitalWrite(inRB_2, HIGH);
 }
