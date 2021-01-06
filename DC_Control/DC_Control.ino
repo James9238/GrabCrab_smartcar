@@ -47,13 +47,18 @@ Is it possible to run both motors and servo from the same nano?
 #define inRB_2  13
 
 /*Define control inputs*/
-#define xAxisPin        A6
-#define yAxisPin        A1
-#define potSWPin        A2
+// #define xAxisPin        A6
+// #define yAxisPin        A1
+// #define potSWPin        A2
 
-#define xAxisPin2       A3
-#define yAxisPin2       A4
-#define potSWPin2       A5
+// #define xAxisPin2       A3
+// #define yAxisPin2       A4
+// #define potSWPin2       A5
+
+#define in1             A1
+#define in2             A2
+#define in3             A3
+#define in4             A4
 
 #define potPin          A0
 
@@ -67,4 +72,4 @@ int motorSpeedRB = 0;
 bool EMERGENCY_STOP = false;
 #define STOP_LED A5
 
-enum directions{forward, backward, slopeLF, slopeLB, slopeRF, slopeRB, strafeL, strafeR, turnL, turnR};
+// enum directions{forward, backward, slopeLF, slopeLB, slopeRF, slopeRB, strafeL, strafeR, turnL, turnR};

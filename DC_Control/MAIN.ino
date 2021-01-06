@@ -1,5 +1,5 @@
 void setup() {
-  attachInterrupt(digitalPinToInterrupt(potSWPin), STOP_ISR, RISING);
+  // attachInterrupt(digitalPinToInterrupt(potSWPin), STOP_ISR, RISING);
   pinmodeSetup();       /*Output and input setup*/
   directionSetup();     /*Startup direction setup*/
   Serial.begin(9600);

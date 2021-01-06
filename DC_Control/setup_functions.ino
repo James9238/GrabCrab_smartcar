@@ -10,12 +10,7 @@ void pinmodeSetup(){
   pinMode(inRF_1, OUTPUT); pinMode(inRF_2, OUTPUT); /*Right front motor*/
   pinMode(inRB_1, OUTPUT); pinMode(inRB_2, OUTPUT); /*Right back motor*/
   /*Control inputs*/
-  pinMode(xAxisPin, INPUT);
-  pinMode(yAxisPin, INPUT);
-  pinMode(potSWPin, INPUT);
-  pinMode(xAxisPin2, INPUT);
-  pinMode(yAxisPin2, INPUT);
-  pinMode(potSWPin2, INPUT);
+  
   pinMode(potPin, INPUT);
 }
 
