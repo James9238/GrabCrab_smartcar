@@ -6,11 +6,10 @@ combine forward, reverse, stop + _LF / _LB / _RF / _RB in according setups.
 */
 
 /*Serial comm codes:
-
-// Not enough free pins for servo control on Arduino 1 with this solution //
+Considering logical circuit to implement outputs to motor driver boards.
 
 In use:
-1111  |   stop all
+1111  |   stop_all
 0010  |   forward
 0011  |   reverse
 0100  |   slopeLF
@@ -30,38 +29,41 @@ Unused:
 1101  |   NULL
 1110  |   NULL
 
+
 */
 
-void readControlInput(){
-  bit1 = digitalRead(in1);
-  bit2 = digitalRead(in2);
-  bit3 = digitalRead(in3);
-  bit4 = digitalRead(in4);
+String readInput(){
+  String inputBits = "";
+  if(digitalRead(in1)){inputBits.concat("1");} else{inputBits.concat("0");}
+  if(digitalRead(in2)){inputBits.concat("1");} else{inputBits.concat("0");}
+  if(digitalRead(in3)){inputBits.concat("1");} else{inputBits.concat("0");}
+  if(digitalRead(in4)){inputBits.concat("1");} else{inputBits.concat("0");}
+  return inputBits;
 }
 
-void directionUpdate(){
+void directionUpdate(String input){
   // 0010  |   forward
-  if      (!bit4 && !bit3 && bit2 && !bit1){forward();}
+  if      (input == "0010"){forward();directions = "forward";}
   // 0011  |   reverse
-  else if (!bit4 && !bit3 && bit2 && bit1){reverse();}
+  else if (input == "0011"){reverse();directions = "reverse";}
   // 0100  |   slopeLF
-  else if (!bit4 && bit3 && !bit2 && !bit1){slopeLF();}
+  else if (input == "0100"){slopeLF();directions = "slopeLF";}
   // 0101  |   slopeLB
-  else if (!bit4 && bit3 && !bit2 && bit1){slopeLB();}
+  else if (input == "0101"){slopeLB();directions = "slopeLB";}
   // 0110  |   slopeRF
-  else if (!bit4 && bit3 && bit2 && !bit1){slopeRF();}
+  else if (input == "0110"){slopeRF();directions = "slopeRF";}
   // 0111  |   slopeRB
-  else if (!bit4 && bit3 && bit2 && bit1){slopeRB();}
+  else if (input == "0111"){slopeRB();directions = "slopeRB";}
   // 1000  |   strafeL
-  else if (bit4 && !bit3 && !bit2 && !bit1){strafeL();}
+  else if (input == "1000"){strafeL();directions = "strafeL";}
   // 1001  |   strafeR
-  else if (bit4 && !bit3 && !bit2 && bit1){strafeR();}
+  else if (input == "1001"){strafeR();directions = "strafeR";}
   // 1010  |   turnL
-  else if (bit4 && !bit3 && bit2 && !bit1){turnL();}
+  else if (input == "1010"){turnL();directions = "turnL";}
   // 1011  |   turnR
-  else if (bit4 && !bit3 && bit2 && bit1){turnR();}
+  else if (input == "1011"){turnR();directions = "turnR";}
   // 1111  |   stop all
-  else if (bit4 && bit3 && bit2 && bit1){turnR();}
+  else if (input == "1111"){stop_all();directions = "stop_all";}
 }
 
 void forward(){
@@ -112,9 +114,76 @@ void turnR(){
   reverse_LF(); reverse_LB(); forward_RF(); forward_RB();
 }
 
-// Set all motor controls to stop
+// Set all motor controls to stop position
 void stop_all(){
   STOP_LF(); STOP_LB(); STOP_RF(); STOP_RB();
 }
 
-// MISSING: Turn around rear and front center points. Forward and reverse while turning?
+// MISSING: Turn around rear and front center points. Forward and reverse while turning? //
+
+// DIRECTION CONTROL BASE FUNCTIONS: //
+
+/*Left front forward*/
+void forward_LF(){
+  digitalWrite(inLF_1, LOW); digitalWrite(inLF_2, HIGH);
+}
+/*Left front reverse*/
+void reverse_LF(){
+  digitalWrite(inLF_1, HIGH); digitalWrite(inLF_2, LOW);
+}
+/*Left front STOP*/
+void STOP_LF(){
+  digitalWrite(inLF_1, LOW); digitalWrite(inLF_2, LOW);
+}
+
+
+/*Left back forward*/
+void forward_LB(){
+  digitalWrite(inLB_1, LOW); digitalWrite(inLB_2, HIGH);
+}
+/*Left back reverse*/
+void reverse_LB(){
+  digitalWrite(inLB_1, HIGH); digitalWrite(inLB_2, LOW);
+}
+/*Left back STOP*/
+void STOP_LB(){
+  digitalWrite(inLB_1, LOW); digitalWrite(inLB_2, LOW);
+}
+
+
+/*Right front forward*/
+void forward_RF(){
+  digitalWrite(inRF_1, LOW); digitalWrite(inRF_2, HIGH);
+}
+/*Right front reverse*/
+void reverse_RF(){
+  digitalWrite(inRF_1, HIGH); digitalWrite(inRF_2, LOW);
+}
+/*Right front STOP*/
+void STOP_RF(){
+  digitalWrite(inRF_1, LOW); digitalWrite(inRF_2, LOW);
+}
+
+
+/*Right back forward*/
+void forward_RB(){
+  digitalWrite(inRB_1, LOW); digitalWrite(inRB_2, HIGH);
+}
+/*Right back reverse*/
+void reverse_RB(){
+  digitalWrite(inRB_1, HIGH); digitalWrite(inRB_2, LOW);
+}
+/*Right back STOP*/
+void STOP_RB(){
+  digitalWrite(inRB_1, LOW); digitalWrite(inRB_2, LOW);
+}
+
+/*
+  Need better emergency stop implementation.
+  Control external transistor to cut power?
+*/
+void STOP_ISR(){
+  STOP_LF(); STOP_LB(); STOP_RF(); STOP_RB();
+  EMERGENCY_STOP = true;
+  digitalWrite(STOP_LED, HIGH);
+}

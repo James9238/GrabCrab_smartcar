@@ -3,12 +3,28 @@
 /*
 Author: Henrik Bryne
 Mail: jegerbryne@gmail.com
-2020/2021 USN Cybernetics first year
+2020/2021 USN Cybernetics
+*/
+
+/*TODO:
+    Include encoder pins
+        +2 pins * 4 encoders. A0-A5 free, need 2 more digital input pins.
+        Possible to free 2 more pins?
+            Combine direction control pinout with external logic?
+  
+    Complete functions for individual speed control based on encoder data.
+        Clean up old test functions
+    
+    Serial comms with RPi, send/recieve functions.
+        Identifier parse or separate software serials from RPi?
+    
+    Fix emergency stop implementation.
+        external transistor circuit to cut power?
 */
 
 // Define inputs, outputs and global variables // 
 
-/*Nano PWM Pinout: 3, 5, 6, 9, 10, 11 // 490Hz(980Hz: pin 5, 6*/
+/*Nano PWM Pinout: 3, 5, 6, 9, 10, 11 //
 /*Mega PWM Pinout: 2-13, 44-46*/
 
 /*Define PWM pinout*/
@@ -33,12 +49,12 @@ Mail: jegerbryne@gmail.com
 
 /*Define control inputs*/
 
-#define potPin          A0
+#define potPin          A4
 
-#define in1             A1
-#define in2             A2
-#define in3             A3
-#define in4             A4
+#define in1             A0
+#define in2             A1
+#define in3             A2
+#define in4             A3
 
 /*Control input variables*/
 bool bit1 = 0;
@@ -46,7 +62,7 @@ bool bit2 = 0;
 bool bit3 = 0;
 bool bit4 = 0;
 
-
+String directions = "NULL";
 
 /*Motor speed variables*/
 int motorSpeedLF = 0;
