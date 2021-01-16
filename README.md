@@ -1,16 +1,41 @@
 # GrabCrab_smartcar
  
-### // GrabCrab Smartcar project //
+# // GrabCrab Smartcar project //
 
-Mål:
-Smart-kjøretøy med mangfoldig eller spesifikke muligheter. Fyll inn mer.
+#### Goal:
+Smart vehicle with SLAM & Object recognition.  
+Servocontrolled robotic arm(s) for handling objects.  
+Individual microcontrollers for separate tasks.  
+-- RPi master controller with remote live feed.  
 
 ## // TODO //  
-PLANNING  
-Chassis-layout  
-Controllers: RPi, Arduino1(motor control), Arduino2(Servo and sensor control).  
-Parts:   
-4xDC Motor w/ encoder  
-4xServo(180*)  
-2xServo(360*)
-Movement sensors(diverse)  
+### PLANNING:  
+- Chassis layout  
+- Logic circuitry for reduced motorcontrol pinouts  
+- Part positioning and weight distribution for complete assembly  
+-   
+  
+  
+### Parts:   
+#### Controllers:  
+- [x] RPi 4B 4GB (might need upgrade, TBD).
+- [x] Arduino nano ARN1 (motor control)  
+- [x] Arduino nano ARN2 (Servo and sensor controller).  
+#### Other parts:  
+- [x] 4xDC Motor w/ encoder  
+- [x] 4xServo(180*)  
+- [x] 2xServo(360*)
+- [x] PCA9685 Servo driver board  
+- [x] Breadboards and wiring
+- [x] Assorted resistors
+- [ ] Movement and mapping sensors  
+- [x] -- 2x Ultrasonic Distance sensors  
+-- -- Degrees of sensitivity?  
+- [x] -- RPi compaible camera module. v2?  
+- [ ] -- SLAM method? Modules for this.  
+-- More? TBD  
+- [ ] 14.4V battery pack  
+- [ ] -- Might need separate 4A 5V source for RPi + arduinos  
+- [ ] Casing materials for circuitry and controllers  
+- [ ] -- 3mm PC or 2/4mm SAN plates should be fine for casings.  
+- [ ] -- 4mm PMMA for top plate?  
