@@ -15,6 +15,10 @@ Individual microcontrollers for separate tasks.
 - Part positioning and weight distribution for complete assembly  
 -   
   
+### Progress:  
+- [x] All motor direction control functions complete and functional, tested with ad-hoc 5bit remote.  
+- [ ] Working on I/O logic for direction control communication with driver board to free up digital pins for encoder inputs.  
+- [ ] Planning
   
 ### Parts:   
 #### Controllers:  
@@ -22,9 +26,10 @@ Individual microcontrollers for separate tasks.
 - [x] Arduino nano ARN1 (motor control)  
 - [x] Arduino nano ARN2 (Servo and sensor controller).  
 #### Other parts:  
-- [x] 4xDC Motor w/ encoder  
-- [x] 4xServo(180*)  
-- [x] 2xServo(360*)
+- [x] 4x DC Motor w/ encoder  
+- [x] 2x L298N Motor drivers (strongly considering upgrade due to voltage drop).  
+- [x] 4x Servo(180*)  
+- [x] 2x Servo(360*)
 - [x] PCA9685 Servo driver board  
 - [x] Breadboards and wiring
 - [x] Assorted resistors
