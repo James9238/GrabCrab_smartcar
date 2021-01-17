@@ -9,6 +9,7 @@ Individual microcontrollers for separate tasks.
 -- RPi master controller with remote live feed.  
 
 ## // TODO //  
+!! Aquire soldering station that actually works well.  
 ### PLANNING:  
 - Chassis layout.  
 - Logic circuitry for reduced motorcontrol pin usage.  
