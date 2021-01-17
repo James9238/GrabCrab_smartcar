@@ -16,7 +16,7 @@ Individual microcontrollers for separate tasks.
 -   
   
 ### Progress:  
-- [x] All motor direction control functions complete and functional, tested with ad-hoc 5bit remote.  
+- [x] All motor direction control functions complete and functional, tested with ad-hoc 4bit remote.  
 - [ ] Working on I/O logic for direction control communication with driver board to free up digital pins for encoder inputs.  
 - [ ] Planning
   
