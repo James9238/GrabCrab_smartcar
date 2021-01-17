@@ -10,9 +10,9 @@ Individual microcontrollers for separate tasks.
 
 ## // TODO //  
 ### PLANNING:  
-- Chassis layout  
-- Logic circuitry for reduced motorcontrol pinouts  
-- Part positioning and weight distribution for complete assembly  
+- Chassis layout.  
+- Logic circuitry for reduced motorcontrol pin usage.  
+- Part positioning and weight distribution for complete assembly.  
 -   
   
 ### Progress:  
@@ -22,7 +22,7 @@ Individual microcontrollers for separate tasks.
   
 ### Parts:   
 #### Controllers:  
-- [x] RPi 4B 4GB (might need upgrade, TBD).
+- [x] RPi 4B 4GB (might need upgrade, TBD)
 - [x] Arduino nano ARN1 (motor control)  
 - [x] Arduino nano ARN2 (Servo and sensor controller).  
 #### Other parts:  
