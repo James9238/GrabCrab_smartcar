@@ -17,7 +17,8 @@ Individual microcontrollers for separate tasks.
   
 ### Progress:  
 - [x] All motor direction control functions complete and functional, tested with ad-hoc 4bit remote.  
-- [ ] Working on I/O logic for direction control communication with driver board to free up digital pins for encoder inputs.  
+- [ ] I/O logic for direction control communication with driver board to free up digital pins for encoder inputs.  
+- [ ] Encoder controlled PWM output. Preferably without library usage, ground-up. Most libraries found so far incredibly slow and wasteful.  
 - [ ] Planning
   
 ### Parts:   
