@@ -32,14 +32,14 @@ Unused:
 
 */
 
-String readInput(){
-  String inputBits = "";
-  if(digitalRead(in1)){inputBits.concat("1");} else{inputBits.concat("0");}
-  if(digitalRead(in2)){inputBits.concat("1");} else{inputBits.concat("0");}
-  if(digitalRead(in3)){inputBits.concat("1");} else{inputBits.concat("0");}
-  if(digitalRead(in4)){inputBits.concat("1");} else{inputBits.concat("0");}
-  return inputBits;
-}
+// String readInput(){
+//   String inputBits = "";
+//   if(digitalRead(in1)){inputBits.concat("1");} else{inputBits.concat("0");}
+//   if(digitalRead(in2)){inputBits.concat("1");} else{inputBits.concat("0");}
+//   if(digitalRead(in3)){inputBits.concat("1");} else{inputBits.concat("0");}
+//   if(digitalRead(in4)){inputBits.concat("1");} else{inputBits.concat("0");}
+//   return inputBits;
+// }
 
 void directionUpdate(String input){
   // 0010  |   forward
