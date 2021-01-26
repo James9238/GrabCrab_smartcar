@@ -12,6 +12,7 @@ Mail: jegerbryne@gmail.com
         -- Update encoder pinouts to correct INT Vectors
         -- Find encoder count for 1 revolution of motor output shaft
             -- Reference below link for interrupt details and registers:
+            -- Reference ATmega2560 datasheet 15.2 Register Description.
             -- Use 6 external: INT5->0 & PCINT0-2
             -- More research on implementation. attachInterrupt invalid.
         -- Should also test accuracy with 1 encoder/motor.
